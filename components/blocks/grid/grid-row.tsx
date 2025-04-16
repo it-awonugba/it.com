@@ -7,7 +7,6 @@ import GridPost from "./grid-post";
 
 type Block = NonNullable<NonNullable<PAGE_QUERYResult>["blocks"]>[number];
 type GridRow = Extract<Block, { _type: "grid-row" }>;
-type GridColumn = NonNullable<NonNullable<GridRow["columns"]>[number]>;
 
 export default function GridRow({
   padding,

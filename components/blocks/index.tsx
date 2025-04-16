@@ -15,24 +15,6 @@ import AllPosts from "@/components/blocks/all-posts";
 
 type Block = NonNullable<NonNullable<PAGE_QUERYResult>["blocks"]>[number];
 
-const componentMap: {
-  [K in Block["_type"]]: React.ComponentType<Extract<Block, { _type: K }>>;
-} = {
-  "hero-1": Hero1,
-  "hero-2": Hero2,
-  "section-header": SectionHeader,
-  "split-row": SplitRow,
-  "grid-row": GridRow,
-  "carousel-1": Carousel1,
-  "carousel-2": Carousel2,
-  "timeline-row": TimelineRow,
-  "cta-1": Cta1,
-  "logo-cloud-1": LogoCloud1,
-
-  "form-newsletter": FormNewsletter,
-  "all-posts": AllPosts,
-};
-
 export default function Blocks({ blocks }: { blocks: Block[] }) {
   return (
     <>

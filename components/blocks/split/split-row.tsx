@@ -10,19 +10,6 @@ import ImageAndCaptionList from "./image-caption-list";
 
 type Block = NonNullable<NonNullable<PAGE_QUERYResult>["blocks"]>[number];
 type SplitRow = Extract<Block, { _type: "split-row" }>;
-type SplitColumn = NonNullable<NonNullable<SplitRow["splitColumns"]>[number]>;
-
-const componentMap: {
-  [K in SplitColumn["_type"]]: React.ComponentType<
-    Extract<SplitColumn, { _type: K }>
-  >;
-} = {
-  "split-content": SplitContent,
-  "split-cards-list": SplitCardsList,
-  "split-image": SplitImage,
-  "split-info-list": SplitInfoList,
-  "image-caption-list": ImageAndCaptionList,
-};
 
 export default function SplitRow({
   padding,
