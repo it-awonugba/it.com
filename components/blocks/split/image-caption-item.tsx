@@ -8,11 +8,10 @@ type ImagesAndCaptionsList = Extract<
   NonNullable<SplitRow["splitColumns"]>[number],
   { _type: "image-caption-list" }
 >;
-type ImageAndCaptionItem = NonNullable<
+type ImageCaptionItemProps = NonNullable<
   NonNullable<ImagesAndCaptionsList["imageCaptionList"]>[number]
 >;
 
-interface ImageCaptionItemProps extends ImageAndCaptionItem {}
 export default function ImageCaptionItem({
   caption,
   image,
