@@ -14,7 +14,7 @@ export default function ImageCaptionList({
   return (
     <div className="flex flex-col justify-center">
       <h2 className="my-4 font-semibold leading-[1.2]">{title}</h2>
-      <div className="flex flex-row flex-wrap justify-center gap-4">
+      <div className="flex flex-row flex-wrap gap-y-8">
         {imageCaptionList &&
           imageCaptionList.map((item, index) => {
             return <ImageCaptionItem {...item} key={index} />;

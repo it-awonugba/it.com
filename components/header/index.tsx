@@ -10,16 +10,6 @@ const navItems = [
     href: "/",
     target: false,
   },
-  {
-    label: "Blog",
-    href: "/blog",
-    target: false,
-  },
-  {
-    label: "About",
-    href: "/about",
-    target: false,
-  },
 ];
 
 export default function Header() {

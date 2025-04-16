@@ -144,8 +144,8 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
   @media (width >= theme(--breakpoint-sm)) {
     max-width: 640px;
     padding-left: 2rem;

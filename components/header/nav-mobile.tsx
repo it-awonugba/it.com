@@ -22,7 +22,7 @@ export default function MobileNav({ navItems }: { navItems: NavItem[] }) {
         <Button
           aria-label="Open Menu"
           variant="ghost"
-          className="w-10 p-5 focus-visible:ring-1 focus-visible:ring-offset-1"
+          className="w-12 p-6 focus-visible:ring-1 focus-visible:ring-offset-1"
         >
           <AlignRight className="dark:text-white" />
         </Button>
