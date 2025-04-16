@@ -44,9 +44,7 @@ export default function Blocks({ blocks }: { blocks: Block[] }) {
           );
           return <div data-type={block._type} key={block._key} />;
         }
-        // @ts-ignore
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        return <Component {...(block as any)} key={block._key} />;
+        return <Component {...block} key={block._key} />;
       })}
     </>
   );
