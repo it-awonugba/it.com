@@ -17,7 +17,7 @@ export default function ImageCaptionItem({
   image,
 }: ImageCaptionItemProps) {
   return image && image.asset?._id ? (
-    <figure className="flex flex-col justify-between items-center h-16">
+    <figure className="flex flex-col w-20 h-16 justify-between items-center">
       <Image
         src={urlFor(image).url()}
         alt={image.alt || ""}
@@ -29,7 +29,7 @@ export default function ImageCaptionItem({
         height={40}
         width={40}
       />
-      <figcaption className="text-xs">{caption}</figcaption>
+      <figcaption className="text-xs text-center">{caption}</figcaption>
     </figure>
   ) : null;
 }
