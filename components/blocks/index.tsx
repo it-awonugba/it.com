@@ -37,14 +37,34 @@ export default function Blocks({ blocks }: { blocks: Block[] }) {
   return (
     <>
       {blocks?.map((block) => {
-        const Component = componentMap[block._type];
-        if (!Component) {
-          console.warn(
-            `No component implemented for block type: ${block._type}`
-          );
-          return <div data-type={block._type} key={block._key} />;
+        switch (block._type) {
+          case "hero-1":
+            return <Hero1 {...block} key={block._key} />;
+          case "hero-2":
+            return <Hero2 {...block} key={block._key} />;
+          case "section-header":
+            return <SectionHeader {...block} key={block._key} />;
+          case "split-row":
+            return <SplitRow {...block} key={block._key} />;
+          case "grid-row":
+            return <GridRow {...block} key={block._key} />;
+          case "carousel-1":
+            return <Carousel1 {...block} key={block._key} />;
+          case "carousel-2":
+            return <Carousel2 {...block} key={block._key} />;
+          case "timeline-row":
+            return <TimelineRow {...block} key={block._key} />;
+          case "cta-1":
+            return <Cta1 {...block} key={block._key} />;
+          case "logo-cloud-1":
+            return <LogoCloud1 {...block} key={block._key} />;
+          case "form-newsletter":
+            return <FormNewsletter {...block} key={block._key} />;
+          case "all-posts":
+            return <AllPosts {...block} key={block._key} />;
+          default:
+            return null;
         }
-        return <Component {...block} key={block._key} />;
       })}
     </>
   );

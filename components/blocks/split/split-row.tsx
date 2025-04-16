@@ -42,22 +42,28 @@ export default function SplitRow({
           )}
         >
           {splitColumns?.map((column) => {
-            const Component = componentMap[column._type];
-            if (!Component) {
-              // Fallback for development/debugging of new component types
-              console.warn(
-                `No component implemented for split column type: ${column._type}`
+            if (column._type === "split-cards-list") {
+              return (
+                <SplitCardsList
+                  {...column}
+                  color={color || undefined}
+                  key={column._key}
+                />
               );
-              return <div data-type={column._type} key={column._key} />;
             }
-            return (
-              <Component
-                {...column}
-                color={color}
-                noGap={noGap}
-                key={column._key}
-              />
-            );
+            if (column._type === "split-image") {
+              return <SplitImage {...column} key={column._key} />;
+            }
+            if (column._type === "split-info-list") {
+              return <SplitInfoList {...column} key={column._key} />;
+            }
+
+            if (column._type === "image-caption-list") {
+              return <ImageAndCaptionList {...column} key={column._key} />;
+            }
+            if (column._type === "split-content") {
+              return <SplitContent {...column} key={column._key} />;
+            }
           })}
         </div>
       )}

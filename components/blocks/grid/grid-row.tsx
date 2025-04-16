@@ -9,15 +9,6 @@ type Block = NonNullable<NonNullable<PAGE_QUERYResult>["blocks"]>[number];
 type GridRow = Extract<Block, { _type: "grid-row" }>;
 type GridColumn = NonNullable<NonNullable<GridRow["columns"]>[number]>;
 
-const componentMap: {
-  [K in GridColumn["_type"]]: React.ComponentType<
-    Extract<GridColumn, { _type: K }>
-  >;
-} = {
-  "grid-card": GridCard,
-  "grid-post": GridPost,
-};
-
 export default function GridRow({
   padding,
   colorVariant,
@@ -36,16 +27,24 @@ export default function GridRow({
           )}
         >
           {columns.map((column) => {
-            const Component = componentMap[column._type];
-            if (!Component) {
-              // Fallback for development/debugging of new component types
-              console.warn(
-                `No component implemented for grid column type: ${column._type}`
+            if (column._type === "grid-card") {
+              return (
+                <GridCard
+                  {...column}
+                  color={color || undefined}
+                  key={column._key}
+                />
               );
-              return <div data-type={column._type} key={column._key} />;
             }
-
-            return <Component {...column} color={color} key={column._key} />;
+            if (column._type === "grid-post") {
+              return (
+                <GridPost
+                  {...column}
+                  color={color || undefined}
+                  key={column._key}
+                />
+              );
+            }
           })}
         </div>
       )}
