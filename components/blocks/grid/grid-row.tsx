@@ -44,6 +44,8 @@ export default function GridRow({
               );
               return <div data-type={column._type} key={column._key} />;
             }
+            // @ts-ignore
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             return (
               <Component {...(column as any)} color={color} key={column._key} />
             );

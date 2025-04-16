@@ -72,9 +72,14 @@ export default function FormNewsletter({
         } else {
           toast.error(result.error);
         }
-      } catch (error: any) {
-        toast.error(error.message);
-        throw new Error(error.message);
+      } catch (error) {
+        if (error instanceof Error) {
+          toast.error(error.message);
+          throw new Error(error.message);
+        } else {
+          toast.error("An unknown error occurred");
+          throw new Error("An unknown error occurred");
+        }
       }
     },
     [form]
