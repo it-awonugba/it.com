@@ -12,7 +12,7 @@ export default function ImageCaptionList({
   imageCaptionList,
 }: ImageAndCaptionList) {
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center opacity-0 animate-fade-up [animation-delay:500ms]">
       <h2 className="my-4 font-semibold leading-[1.2]">{title}</h2>
       <div className="flex flex-row flex-wrap gap-y-8">
         {imageCaptionList &&

@@ -4,11 +4,14 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --animate-fade-up: fade-up 0.8s ease-out forwards;
   --animate-flip-open: flip-open 0.4s ease-out forwards;
+  --animate-fade-left: fade-left 0.8s ease-out forwards;
+  --animate-fade-right: fade-right 0.8s ease-out forwards;
+  --animate-fade-up: fade-up 0.8s ease-out forwards;
+  --animate-fade-down: fade-down 0.8s ease-out forwards;
 }
 
-@keyframes fade-up {
+@keyframes fade-left {
   0% {
     opacity: 0;
     transform: translateX(150px);
@@ -16,6 +19,37 @@
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

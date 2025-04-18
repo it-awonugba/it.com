@@ -29,11 +29,11 @@ export default function SplitContent({
 }: SplitContentProps) {
   return (
     <div
-      className={cn(
+      className={`animate-fade-down opacity-0  [animation-delay:500ms] ${cn(
         !sticky ? "flex flex-col justify-center" : undefined,
         padding?.top ? "pt-16 xl:pt-20" : undefined,
         padding?.bottom ? "pb-16 xl:pb-20" : undefined
-      )}
+      )}`}
     >
       <div
         className={cn(
