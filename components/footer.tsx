@@ -7,16 +7,6 @@ const navItems = [
     href: "/",
     target: false,
   },
-  {
-    label: "Blog",
-    href: "/blog",
-    target: false,
-  },
-  {
-    label: "About",
-    href: "/about",
-    target: false,
-  },
 ];
 
 export default function Footer() {
@@ -58,7 +48,7 @@ export default function Footer() {
             >
               @it-awonugba
             </Link>
-            .
+            . | Built with Next.js and Sanity.io.
           </p>
         </div>
       </div>
