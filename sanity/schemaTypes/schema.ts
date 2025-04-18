@@ -27,6 +27,8 @@ import splitImage from "./blocks/split/split-image";
 import splitInfoList from "./blocks/split/split-info-list";
 import splitInfo from "./blocks/split/split-info";
 import gridCard from "./blocks/grid/grid-card";
+import projectCard from "./blocks/projects/project-card";
+import projectRow from "./blocks/projects/project-row";
 
 import gridPost from "./blocks/grid/grid-post";
 import gridRow from "./blocks/grid/grid-row";
@@ -68,6 +70,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     imageCaptionList,
     splitInfo,
     gridCard,
+    projectCard,
+    projectRow,
 
     gridPost,
     gridRow,
