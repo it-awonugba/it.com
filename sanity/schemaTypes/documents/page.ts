@@ -51,6 +51,7 @@ export default defineType({
         { type: "logo-cloud-1" },
         { type: "form-newsletter" },
         { type: "all-posts" },
+        { type: "project-row" },
       ],
       options: {
         insertMenu: {
@@ -104,6 +105,11 @@ export default defineType({
               name: "all-posts",
               title: "All Posts",
               of: ["all-posts"],
+            },
+            {
+              name: "project-row",
+              title: "Project Row",
+              of: ["project-row"],
             },
           ],
           views: [

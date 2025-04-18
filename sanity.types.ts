@@ -230,6 +230,38 @@ export type GridPost = {
   };
 };
 
+export type ProjectRow = {
+  _type: "project-row";
+  title?: string;
+  padding?: SectionPadding;
+  colorVariant?: "background" | "primary" | "secondary" | "card" | "accent" | "destructive" | "muted";
+  noGap?: boolean;
+  projectCards?: Array<{
+    _key: string;
+  } & ProjectCard>;
+};
+
+export type ProjectCard = {
+  _type: "project-card";
+  title?: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+  description?: string;
+  githubLink?: string;
+  link?: string;
+};
+
 export type GridCard = {
   _type: "grid-card";
   title?: string;
@@ -819,7 +851,9 @@ export type Page = {
     _key: string;
   } & FormNewsletter | {
     _key: string;
-  } & AllPosts>;
+  } & AllPosts | {
+    _key: string;
+  } & ProjectRow>;
   meta_title?: string;
   meta_description?: string;
   noindex?: boolean;
@@ -909,7 +943,7 @@ export type Code = {
   highlightedLines?: Array<number>;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | AllPosts | FormNewsletter | LogoCloud1 | Cta1 | Timelines1 | TimelineRow | GridRow | GridPost | GridCard | SplitInfo | ImageCaptionList | SplitInfoList | SplitImage | SplitCard | SplitCardsList | SplitContent | SplitRow | SectionHeader | Hero2 | Hero1 | Carousel2 | Carousel1 | SectionPadding | ButtonVariant | ColorVariant | Link | BlockContent | Testimonial | Category | Post | Author | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug | Code;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | AllPosts | FormNewsletter | LogoCloud1 | Cta1 | Timelines1 | TimelineRow | GridRow | GridPost | ProjectRow | ProjectCard | GridCard | SplitInfo | ImageCaptionList | SplitInfoList | SplitImage | SplitCard | SplitCardsList | SplitContent | SplitRow | SectionHeader | Hero2 | Hero1 | Carousel2 | Carousel1 | SectionPadding | ButtonVariant | ColorVariant | Link | BlockContent | Testimonial | Category | Post | Author | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug | Code;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./app/sitemap.ts
 // Variable: pagesQuery
@@ -1624,7 +1658,7 @@ export type PAGE_QUERYResult = {
         _key: string;
       }> | null;
     }> | null;
-  }> | null;
+  } | {}> | null;
   meta_title: string | null;
   meta_description: string | null;
   noindex: boolean | null;
