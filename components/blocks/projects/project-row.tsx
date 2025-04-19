@@ -18,9 +18,7 @@ export default function ProjectRow({
   return (
     <SectionContainer color={color} padding={padding}>
       {title && (
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-          {title}
-        </h2>
+        <h2 className="text-3xl text-center md:text-5xl mb-4">{title}</h2>
       )}
       {projectCards && projectCards?.length === 0 && (
         <p className="text-center text-gray-500">No projects available.</p>
