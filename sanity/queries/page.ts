@@ -12,6 +12,7 @@ import { logoCloud1Query } from "./logo-cloud/logo-cloud-1";
 
 import { formNewsletterQuery } from "./forms/newsletter";
 import { allPostsQuery } from "./all-posts";
+import { projectRowQuery } from "./projects/project-row";
 
 export const PAGE_QUERY = groq`
   *[_type == "page" && slug.current == $slug][0]{
@@ -27,6 +28,7 @@ export const PAGE_QUERY = groq`
       ${cta1Query},
       ${logoCloud1Query},
       ${formNewsletterQuery},
+      ${projectRowQuery}, 
       ${allPostsQuery},
     },
     meta_title,

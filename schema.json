@@ -6063,6 +6063,21 @@
                 },
                 "rest": {
                   "type": "inline",
+                  "name": "project-row"
+                }
+              },
+              {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "rest": {
+                  "type": "inline",
                   "name": "timeline-row"
                 }
               },
@@ -6124,21 +6139,6 @@
                 "rest": {
                   "type": "inline",
                   "name": "all-posts"
-                }
-              },
-              {
-                "type": "object",
-                "attributes": {
-                  "_key": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "rest": {
-                  "type": "inline",
-                  "name": "project-row"
                 }
               }
             ]
