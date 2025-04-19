@@ -17,6 +17,14 @@ export default function ProjectRow({
   const color = stegaClean(colorVariant);
   return (
     <SectionContainer color={color} padding={padding}>
+      {title && (
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+          {title}
+        </h2>
+      )}
+      {projectCards && projectCards?.length === 0 && (
+        <p className="text-center text-gray-500">No projects available.</p>
+      )}
       {projectCards && projectCards?.length > 0 && (
         <div
           className={cn(
