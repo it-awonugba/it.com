@@ -46,12 +46,12 @@ export default defineType({
         { type: "section-header" },
         { type: "split-row" },
         { type: "grid-row" },
+        { type: "project-row" },
         { type: "timeline-row" },
         { type: "cta-1" },
         { type: "logo-cloud-1" },
         { type: "form-newsletter" },
         { type: "all-posts" },
-        { type: "project-row" },
       ],
       options: {
         insertMenu: {

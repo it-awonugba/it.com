@@ -12,6 +12,7 @@ import LogoCloud1 from "@/components/blocks/logo-cloud/logo-cloud-1";
 
 import FormNewsletter from "@/components/blocks/forms/newsletter";
 import AllPosts from "@/components/blocks/all-posts";
+import ProjectRow from "./projects/project-row";
 
 type Block = NonNullable<NonNullable<PAGE_QUERYResult>["blocks"]>[number];
 
@@ -44,6 +45,8 @@ export default function Blocks({ blocks }: { blocks: Block[] }) {
             return <FormNewsletter {...block} key={block._key} />;
           case "all-posts":
             return <AllPosts {...block} key={block._key} />;
+          case "project-row":
+            return <ProjectRow {...block} key={block._key} />;
           default:
             return null;
         }
